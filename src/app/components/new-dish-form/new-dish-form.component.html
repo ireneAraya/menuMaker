@@ -1,0 +1,22 @@
+<form>
+  <legend>New dish</legend>
+  <div class="form-group">
+    <label for="nameTxt">Name</label>
+    <input type="text" [value]="name" name="nameTxt" id="nameTxt">
+  </div>
+  <div class="form-group">
+    <label for="priceTxt">Price</label>
+    <input type="text" [value]="price" name="priceTxt" id="priceTxt">
+  </div>
+  <div class="form-group">
+    <label for="descriptionTxt">Description</label>
+    <textarea [value]="description" name="descriptionTxt" id="descriptionTxt"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="categoriesSlt">Category</label>
+    <select>
+      <option [selected]="categoryName" *ngFor='let category of categories' value="category.getTitle()">{{category.getTitle()}}</option>
+    </select>
+  </div>
+  <input type="submit" value="Add" (click)='onAdd()'>
+</form>

@@ -1,0 +1,6 @@
+<div class="category">
+  <h2>{{category.title}}</h2>
+  <div *ngFor='let dish of category.getDishes()'>
+    <app-dish [dish]='dish'>Loading...</app-dish>
+  </div>
+</div>
