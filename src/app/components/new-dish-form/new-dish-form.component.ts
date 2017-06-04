@@ -21,7 +21,32 @@ export class NewDishFormComponent implements OnInit {
   ngOnInit() { }
 
   onAdd() {
-    this.sendDish.emit(new Dish(this.name, this.price, this.description, this.categoryName));
+    let dish = new Dish(this.name, this.price, this.description, this.categoryName);
+    this.sendDish.emit(dish);
+    console.log(dish);
+    //Agrege esta parte para resetear los valores de os textos por ahora.
+    this.name = 'name';
+    this.price = 0;
+    this.description = 'description';
+  }
+
+  //Agregue los metodos para menejar los eventos
+  //cuando se hace un cambio en cada elemento
+  //Al hacer esto tube que hacer los cambios en el html.
+  onNameChange(event) {
+    this.name = event.target.value;
+  }
+
+  onPriceChange(event) {
+    this.price = Number(event.target.value);
+  }
+
+  onDescriptionChange(event) {
+    this.description = event.target.value;
+  }
+
+  onCategoryChange(event) {
+    this.categoryName = event.target.value;
   }
 
 }

@@ -1,3 +1,4 @@
 <app-header>Loading...</app-header>
-<app-new-dish-form [categories]='categories'>Loading...</app-new-dish-form>
+<!--Agregue el event binding para recibir el dish-->
+<app-new-dish-form [categories]='categories' (sendDish)='receiveDish($event)'>Loading...</app-new-dish-form>
 <app-categories [categories]='categories'>Loading...</app-categories>
